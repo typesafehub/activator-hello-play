@@ -75,9 +75,9 @@
 
     <p>
         Modern web applications often use compilers to generate static assets for the browser.  Play has a built-in asset compiler which can automatically syntax check &amp; minify JavaScript, compile CoffeeScript to JavaScript, and compile LESS to CSS.  You can also plug in other compilers into the Play's asset compiler.<br/>
-        This application contains two example uses of the asset compiler.  The <a href="#code/app/assets/javascripts/index.js" class="shortcut">index.js</a> file will automatically be syntax checked and minified.  The minified version is can be referenced in a template with:
+        This application contains two example uses of the asset compiler.  The <a href="#code/app/assets/javascripts/index.js" class="shortcut">index.js</a> file will automatically be syntax checked and minified.  To reference the asset in a template, use:
         <pre><code>&lt;script type='text/javascript'
-src='@routes.Assets.at("javascripts/index.min.js")'&gt;
+src='@routes.Assets.at("javascripts/index.js")'&gt;
 &lt;/script&gt;</code></pre>
         You can also put CoffeeScript files with a <strong>.coffee</strong> extension in the <a href="#code/app/assets/javascripts" class="shortcut">app/assets/javascripts</a> directory to have them automatically compiled and minified.<br/>
         The <a href="#code/app/assets/stylesheets/index.less" class="shortcut">index.less</a> file will be compiled into both a <strong>index.css</strong> and a <strong>index.min.css</strong> file.
