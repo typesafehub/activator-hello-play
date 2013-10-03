@@ -10,7 +10,7 @@ import static org.fest.assertions.Assertions.*;
 public class IntegrationTest {
 
     /**
-     * This integration test uses Solenium to test the app with a browser
+     * This integration test uses Selenium to test the app with a browser
      */   
     @Test
     public void test() {
