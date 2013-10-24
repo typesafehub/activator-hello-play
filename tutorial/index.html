@@ -24,7 +24,7 @@
     <h2> HTTP Routing</h2>
 
     <p>
-        The <a href="#code/conf/routes" class="shortcut">routes</a> file contains mappings between HTTP request verbs &amp; paths and the code that controller method that handles the requests.  Route paths can be parametrized to support RESTful style URLs.  The following mapping will handle HTTP GET requests to "/" using the <strong>controllers.MainController.index</strong> method:
+        The <a href="#code/conf/routes" class="shortcut">routes</a> file contains mappings between HTTP request verbs &amp; paths and the controller method that handles the requests.  Route paths can be parametrized to support RESTful style URLs.  The following mapping will handle HTTP GET requests to "/" using the <strong>controllers.MainController.index</strong> method:
         <pre><code>GET   /    controllers.MainController.index</code></pre>
         You can try out the routing by first making a request to an unmatched route, like: <a href="http://localhost:9000/foo" target="_blank">http://localhost:9000/foo</a><br/>
         This should produce an error because there isn't a route that matches the request.
