@@ -19,5 +19,3 @@ libraryDependencies ++= Seq(
 )
 
 play.Project.playScalaSettings
-
-closureCompilerOptions := Seq("rjs")
