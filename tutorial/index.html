@@ -31,7 +31,9 @@
         Then edit the <a href="#code/conf/routes" class="shortcut">routes</a> to include a new route:
         <pre><code>GET   /foo    controllers.MainController.index</code></pre>
         Now retry the request and you should see the default index page.<br/>
-        By default the routes are compiled by Play so that they can be used in a type-safe way.  This prevents issues caused by incorrect URL usages.
+        Play compiles the routes by default to ensure they are used in a type-safe way.  This prevents issues caused by incorrect URL usages.  You can see this in action by adding a route to a non existent method.  Add the following line to the routes file:
+        <pre><code>GET  /       controllers.MainController.NonExistentMethod</code></pre>
+        and save the file.  After the automatic compilation completes the new line will have a compilation error icon and a tool tip message indicating the NonExistentMethod is not a mebmer of MainController.  Other errors such as invalid HTTP verbs or invalid URL paths cause compile time errors as well.  Remove the added line to return to successful compilation.
         <!-- todo: Learn more -->
     </p>
 </div>
@@ -52,9 +54,12 @@
     <p>
         The <strong>MainController.index</strong> method uses a template which is compiled by Play into a function.  The source is in the <a href="#code/app/views/index.scala.html" class="shortcut">index.scala.html</a> file and is available by calling the <strong>views.html.index.render</strong> function.  This template takes a parameter of a <strong>String</strong> so the compiled function also takes a <strong>String</strong> parameter.  The default templating language in Play is Scala, but a number of other templating languages (like Java, Groovy, and Dust) can also be plugged in.<br/>
         The <a href="#code/app/views/index.scala.html" class="shortcut">index template</a> uses the <a href="#code/app/views/main.scala.html" class="shortcut">main template</a> by calling the <strong>main</strong> function with the required parameters.<br/>
-        Notice that the templates do not use hard-coded URLs and instead use Play's reverse routing, like:
-        <pre><code>@routes.Assets.at("images/favicon.png")</code></pre>
-        This provides a type-safe way to specify URLs in an application.  If the URL to a file changes, then automatically, the new value will be used throughout all of the URL references.  You can use the reverse router anywhere in your code, like redirects in controllers.<br/>
+        Notice that the templates do not generally contain hard-coded URL strings and instead use Play's reverse routing, like:
+        <pre><code>@routes.MessageController.javascriptRoutes</code></pre>
+        This provides a type-safe way to specify route URLs in an application.  If the URL of a route changes, then the new route URL will be used automatically anywhere the route is referenced.  You can use the reverse router anywhere in your code, like redirects in controllers.  Additionally, using reverse routing provides compile time checking of routes.  This can be seen by changing the reverse route to:
+        <pre><code>@routes.MessageController.NonExistentRoute</code></pre>
+        After saving the file the compilation will report an error within the template file indicating the route is not known.  Revert the change to return to a successful compilation state.
+        <br/>
         Like controllers (and all source code in Play) you can make changes to templates which triggers a recompile.  Then simply refresh the page to see the changes.  Try it out by making a change to the <a href="#code/app/views/index.scala.html" class="shortcut">index template</a>, saving the file, and then refreshing the <a href="http://localhost:9000/" target="_blank">index page</a> in your browser.
         <!-- todo: Learn more -->
     </p>
