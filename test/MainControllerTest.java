@@ -2,6 +2,7 @@ import controllers.routes;
 import org.junit.*;
 
 import play.mvc.*;
+import play.twirl.api.Content;
 
 import static play.test.Helpers.*;
 import static org.fest.assertions.Assertions.*;
