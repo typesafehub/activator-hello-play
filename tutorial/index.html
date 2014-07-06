@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
     <title>Hello Play Framework - Activator Template</title>
 </head>
@@ -33,7 +33,7 @@
         Now retry the request and you should see the default index page.<br/>
         Play compiles the routes by default to ensure they are used in a type-safe way.  This prevents issues caused by incorrect URL usages.  You can see this in action by adding a route to a non existent method.  Add the following line to the routes file:
         <pre><code>GET  /       controllers.MainController.NonExistentMethod</code></pre>
-        and save the file.  After the automatic compilation completes the new line will have a compilation error icon and a tool tip message indicating the NonExistentMethod is not a mebmer of MainController.  Other errors such as invalid HTTP verbs or invalid URL paths cause compile time errors as well.  Remove the added line to return to successful compilation.
+        and save the file.  After the automatic compilation completes the new line will have a compilation error icon and a tool tip message indicating the NonExistentMethod is not a member of MainController.  Other errors such as invalid HTTP verbs or invalid URL paths cause compile time errors as well.  Remove the added line to return to successful compilation.
         <!-- todo: Learn more -->
     </p>
 </div>
@@ -104,7 +104,7 @@ src='@routes.Assets.at("javascripts/index.min.js")'&gt;
     <h2> SBT Build</h2>
 
     <p>
-        SBT is the build system underneath Play applications.  It is responsible for resolving dependencies, compiling the project, running the tests, etc.  The primary build definition file is the <a href="#code/build.sbt" class="shortcut">build.sbt</a> file.  In that file you will see a comma-seperated list of dependencies which can be modified to suit your needs.  Play includes a number of libraries which can selectively be turned on/off.  For instance if you want to use JPA with Play, uncomment the <strong>javaJpa</strong> dependency.  You can also add your own dependencies in the SBT form:
+        SBT is the build system underneath Play applications.  It is responsible for resolving dependencies, compiling the project, running the tests, etc.  The primary build definition file is the <a href="#code/build.sbt" class="shortcut">build.sbt</a> file.  In that file you will see a comma-separated list of dependencies which can be modified to suit your needs.  Play includes a number of libraries which can selectively be turned on/off.  For instance if you want to use JPA with Play, uncomment the <strong>javaJpa</strong> dependency.  You can also add your own dependencies in the SBT form:
         <pre><code>"group" % "artifact" % "version"</code></pre>
         <!-- todo: Learn more -->
     </p>
